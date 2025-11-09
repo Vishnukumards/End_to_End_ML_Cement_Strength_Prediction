@@ -163,8 +163,3 @@ Feel free to adapt or extend it for your own MLOps learning and experimentation.
 
 ```
 
-Would you like me to add badges (like Python version, Flask, License, etc.) and format it for GitHub with a clean header layout?
-```
-
-
-Performance: The model achieves an R-squared (R²) score of approximately 0.93 on the test set, indicating high predictive accurac
