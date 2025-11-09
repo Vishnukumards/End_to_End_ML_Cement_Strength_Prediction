@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cement Strength Prediction</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .container { display: flex; gap: 40px; }
+        .section { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        h2, h3 { color: #333; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .prediction-result { margin-top: 20px; font-size: 1.2em; font-weight: bold; color: #28a745; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Cement Strength Prediction Hub</h1>
+    <hr>
+    
+    <div class="container">
+        <!-- Section for Single, Real-Time Prediction -->
+        <div class="section">
+            <h2>Real-Time Prediction</h2>
+            <form action="{{ url_for('predict_datapoint') }}" method="post">
+                <label>Cement (kg/m³):</label><br>
+                <input type="text" name="cement" required><br><br>
+                
+                <label>Blast Furnace Slag (kg/m³):</label><br>
+                <input type="text" name="blast_furnace_slag" required><br><br>
+                
+                <label>Fly Ash (kg/m³):</label><br>
+                <input type="text" name="fly_ash" required><br><br>
+                
+                <label>Water (kg/m³):</label><br>
+                <input type="text" name="water" required><br><br>
+                
+                <label>Superplasticizer (kg/m³):</label><br>
+                <input type="text" name="superplasticizer" required><br><br>
+                
+                <label>Coarse Aggregate (kg/m³):</label><br>
+                <input type="text" name="coarse_aggregate" required><br><br>
+                
+                <label>Fine Aggregate (kg/m³):</label><br>
+                <input type="text" name="fine_aggregate" required><br><br>
+                
+                <label>Age (days):</label><br>
+                <input type="text" name="age" required><br><br>
+                
+                <button type="submit">Predict Single Value</button>
+            </form>
+            
+            {% if results %}
+                <div class="prediction-result">Predicted Strength: {{ results }} MPa</div>
+            {% endif %}
+        </div>
+
+        <!-- Section for Batch Prediction -->
+        <div class="section">
+            <h2>Batch Prediction (Upload a CSV)</h2>
+            <form action="{{ url_for('batch_predict') }}" method="post" enctype="multipart/form-data">
+                <label for="file">Choose a CSV file to upload:</label><br>
+                <input type="file" id="file" name="file" accept=".csv" required><br><br>
+                <button type="submit">Predict on Dataset</button>
+            </form>
+
+            {% if error %}
+                <p class="error"><strong>Error:</strong> {{ error }}</p>
+            {% endif %}
+
+            {% if batch_success %}
+                <h3 style="color: green;">{{ batch_success }}</h3>
+                <h4>Prediction Results (First 5 Rows):</h4>
+                <div>
+                    {{ table|safe }}
+                </div>
+                <br>
+                <a href="/download/{{ filename }}" download>
+                    <button>Download Full Predicted Dataset</button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

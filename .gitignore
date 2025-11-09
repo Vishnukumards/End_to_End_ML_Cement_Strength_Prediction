@@ -1,0 +1,10 @@
+# ignore environment and pickle files
+.env
+*.pkl
+*.pickle
+*.h5
+*.csv
+*.zip
+*.txt
+*.npy
+*.npz

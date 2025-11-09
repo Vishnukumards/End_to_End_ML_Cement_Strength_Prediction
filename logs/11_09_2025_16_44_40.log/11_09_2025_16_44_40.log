@@ -1,0 +1,10 @@
+[ 2025-11-09 16:44:44,895 ] 20 root - INFO - Entered the data ingestion method or component
+[ 2025-11-09 16:44:44,940 ] 23 root - INFO - Read the dataset as dataframe
+[ 2025-11-09 16:44:44,959 ] 28 root - INFO - Train test split initiated
+[ 2025-11-09 16:44:44,987 ] 34 root - INFO - Ingestion of the data is completed
+[ 2025-11-09 16:44:45,052 ] 47 root - INFO - Read train and test data completed
+[ 2025-11-09 16:44:45,052 ] 48 root - INFO - Obtaining preprocessing object
+[ 2025-11-09 16:44:45,063 ] 59 root - INFO - Applying preprocessing object on training and testing dataframes.
+[ 2025-11-09 16:44:45,085 ] 70 root - INFO - Saved preprocessing object.
+[ 2025-11-09 16:44:45,085 ] 20 root - INFO - Split training and test input data
+[ 2025-11-09 16:44:45,718 ] 38 root - INFO - R2 Score: 0.8824494526529816

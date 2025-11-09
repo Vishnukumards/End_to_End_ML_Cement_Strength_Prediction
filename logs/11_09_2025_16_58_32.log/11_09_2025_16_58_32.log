@@ -1,0 +1,7 @@
+[ 2025-11-09 16:58:32,670 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-11-09 16:58:32,673 ] 97 werkzeug - INFO -  * Debugger PIN: 899-646-771
+[ 2025-11-09 16:58:45,279 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:58:45] "POST /predictdata HTTP/1.1" 200 -
+[ 2025-11-09 16:59:05,229 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:59:05] "POST /predictdata HTTP/1.1" 200 -
+[ 2025-11-09 17:00:01,840 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:00:01] "POST /predictdata HTTP/1.1" 200 -
+[ 2025-11-09 17:05:31,764 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:05:31] "POST /predictdata HTTP/1.1" 200 -
+[ 2025-11-09 17:23:25,962 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\vishn\\Downloads.96bd4edb-86af-4b4b-878c-a589606559d8\\Downloads\\New folder\\PROJECT_CEMENT_STRENGTH\\predict.py', reloading

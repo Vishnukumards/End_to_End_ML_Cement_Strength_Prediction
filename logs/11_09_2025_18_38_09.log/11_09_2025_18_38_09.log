@@ -1,0 +1,16 @@
+[ 2025-11-09 18:38:09,938 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-11-09 18:38:09,942 ] 97 werkzeug - INFO -  * Debugger PIN: 899-646-771
+[ 2025-11-09 18:40:44,268 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:40:44] "GET / HTTP/1.1" 200 -
+[ 2025-11-09 18:41:30,899 ] 70 root - INFO - File uploaded successfully to uploads\9790689a7f82440eb7535540e1c7e3ea_sample_batch_data.csv
+[ 2025-11-09 18:41:33,955 ] 88 root - INFO - Batch prediction complete. Output saved to generated\predicted_9790689a7f82440eb7535540e1c7e3ea_sample_batch_data.csv
+[ 2025-11-09 18:41:33,966 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:41:33] "POST /batch_predict HTTP/1.1" 200 -
+[ 2025-11-09 18:41:38,566 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:41:38] "GET /download/predicted_9790689a7f82440eb7535540e1c7e3ea_sample_batch_data.csv HTTP/1.1" 200 -
+[ 2025-11-09 18:42:28,276 ] 70 root - INFO - File uploaded successfully to uploads\93de888609c342eba2ef02e5e09d772e_sample_batch_data.csv
+[ 2025-11-09 18:42:28,328 ] 88 root - INFO - Batch prediction complete. Output saved to generated\predicted_93de888609c342eba2ef02e5e09d772e_sample_batch_data.csv
+[ 2025-11-09 18:42:28,333 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:42:28] "POST /batch_predict HTTP/1.1" 200 -
+[ 2025-11-09 18:42:43,184 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:42:43] "POST /predictdata HTTP/1.1" 200 -
+[ 2025-11-09 18:43:34,534 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:43:34] "POST /predictdata HTTP/1.1" 200 -
+[ 2025-11-09 18:43:51,654 ] 70 root - INFO - File uploaded successfully to uploads\b2dfccb411d343ae94391e91f9802dbe_sample_batch_data.csv
+[ 2025-11-09 18:43:51,703 ] 88 root - INFO - Batch prediction complete. Output saved to generated\predicted_b2dfccb411d343ae94391e91f9802dbe_sample_batch_data.csv
+[ 2025-11-09 18:43:51,706 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:43:51] "POST /batch_predict HTTP/1.1" 200 -
+[ 2025-11-09 18:43:58,914 ] 97 werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:43:58] "GET /download/predicted_b2dfccb411d343ae94391e91f9802dbe_sample_batch_data.csv HTTP/1.1" 200 -
