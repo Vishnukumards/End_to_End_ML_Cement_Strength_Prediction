@@ -23,6 +23,26 @@ Users can input values for a single concrete mixture through a web form and get 
 Upload a CSV file containing multiple concrete mixtures. The app predicts strengths for all and returns a downloadable CSV file with an added prediction column.
 
 ---
+## 📸 Screenshots
+
+You can check out all screenshots of the project here:  
+🔗 [Screenshots Folder on GitHub](https://github.com/Vishnukumards/End_to_End_ML_Cement_Strength_Prediction/Screenshots/Screenshot%2025-11-09%184218.pnghttps://github.com/Vishnukumards/End_to_End_ML_Cement_Strength_Prediction/Screenshots/Screenshot%2025-11-09%184218.png)
+
+Example views:
+- Web Interface (Real-Time & Batch Prediction)
+- Prediction Output Table
+- Model Training Logs
+
+--
+
+## 🎥 Project Overview Video
+
+Watch the complete project walkthrough here:  
+🎬 [Project Overview Video](https://github.com/Vishnukumards/End_to_End_ML_Cement_Strength_Prediction/blob/main/Demo_Project/Screen%20Recording%202025-11-09%20184420.mp4)
+
+*(Replace `<your-video-link>` with your actual GitHub or YouTube video URL.)*
+
+---
 
 ## 📂 Project Structure
 
