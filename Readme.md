@@ -1,117 +1,170 @@
-# Cement Compressive Strength Prediction
 
-This is an end-to-end Machine Learning Operations (MLOps) project designed to predict the compressive strength of concrete based on its constituent components. The project is built with a modular structure, featuring a complete training pipeline, a real-time prediction API, and a batch prediction service, all accessible through a user-friendly web interface built with Flask.
+# 🏗️ Cement Compressive Strength Prediction
+
+This is an end-to-end Machine Learning Operations (MLOps) project designed to predict the compressive strength of concrete based on its constituent components.  
+The project includes a complete training pipeline, real-time prediction API, and batch prediction service — all accessible via a user-friendly Flask web interface.
+
+---
 
 ## 🎯 Problem Statement
 
-The goal of this project is to build a robust machine learning model that accurately predicts the compressive strength of concrete. This prediction is based on 8 quantitative input variables representing the components of the concrete mixture and its age. By predicting the strength, construction companies can optimize material usage, reduce costs, and ensure the quality and durability of concrete structures without relying solely on time-consuming physical tests.
+The goal is to build a robust machine learning model that accurately predicts the **compressive strength of concrete**.  
+This prediction is based on 8 quantitative input variables representing the components of the mixture and its age.  
+By doing so, construction companies can **optimize material usage, reduce costs,** and **ensure quality** without relying solely on physical testing.
 
 ---
 
 ## ✨ Features
 
-This application provides two primary modes of prediction:
+**1. Real-Time Prediction (Single Input)**  
+Users can input values for a single concrete mixture through a web form and get an instant prediction.
 
-1.  **Real-Time Prediction (Single Input)**: A web form allows users to input the values for each component of a single concrete mixture and receive an instant strength prediction.
-
-2.  **Batch Prediction (CSV Upload)**: Users can upload a CSV file containing multiple rows of cement mixture data. The application processes the entire file and provides a downloadable CSV with an added column for the predicted strength of each mixture.
+**2. Batch Prediction (CSV Upload)**  
+Upload a CSV file containing multiple concrete mixtures. The app predicts strengths for all and returns a downloadable CSV file with an added prediction column.
 
 ---
 
 ## 📂 Project Structure
 
-The project is organized using a professional MLOps structure to ensure scalability and maintainability:
+```
+
 PROJECT_CEMENT_STRENGTH/
-├── artifacts/ # Stores the trained model (model.pkl) and preprocessor (preprocessor.pkl)
-├── generated/ # Stores the output CSVs from batch predictions
-├── logs/ # Stores log files for monitoring and debugging
-├── notebooks/ # Contains Jupyter notebooks for exploratory data analysis
-├── src/ # The main source code package
-│ ├── init.py
-│ ├── components/ # Modules for different ML stages
-│ │ ├── init.py
-│ │ ├── data_ingestion.py
-│ │ ├── data_transformation.py
-│ │ └── model_trainer.py
-│ ├── pipeline/ # Orchestration scripts for training and prediction
-│ │ ├── init.py
-│ │ ├── predict_pipeline.py
-│ │ └── train_pipeline.py
-│ ├── exception.py # Custom exception handling
-│ ├── logger.py # Logging configuration
-│ └── utils.py # Utility functions (e.g., for saving/loading objects)
-├── templates/ # HTML templates for the Flask web application
-│ └── index.html
-├── uploads/ # Temporarily stores uploaded files
-├── venv/ # Virtual environment files
-├── application.py # The main Flask application entry point
-├── predict.py # Script for command-line batch prediction
-├── requirements.txt # Project dependencies
-└── setup.py # Makes the src directory an installable package
+├── artifacts/                 # Trained model (model.pkl) & preprocessor (preprocessor.pkl)
+├── generated/                 # Output CSVs from batch predictions
+├── logs/                      # Log files for debugging and monitoring
+├── notebooks/                 # Jupyter notebooks for EDA
+├── src/                       # Source code package
+│   ├── **init**.py
+│   ├── components/            # ML workflow components
+│   │   ├── **init**.py
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   ├── pipeline/              # Training & prediction pipelines
+│   │   ├── **init**.py
+│   │   ├── predict_pipeline.py
+│   │   └── train_pipeline.py
+│   ├── exception.py           # Custom exception handling
+│   ├── logger.py              # Logging setup
+│   └── utils.py               # Helper functions (save/load, etc.)
+├── templates/                 # Flask HTML templates
+│   └── index.html
+├── uploads/                   # Temporary file uploads
+├── venv/                      # Virtual environment
+├── application.py             # Flask app entry point
+├── predict.py                 # CLI batch prediction script
+├── requirements.txt           # Dependencies
+└── setup.py                   # Installable package setup
+
+````
 
 ---
 
 ## ⚙️ Technology Stack
 
--   **Backend**: Flask
--   **Machine Learning & Data Science**: Scikit-learn, Pandas, NumPy
--   **Environment & Tooling**: Python 3.8+, Virtual Environment (`venv`), Git
+- **Backend**: Flask  
+- **ML & Data Science**: Scikit-learn, Pandas, NumPy  
+- **Environment & Tooling**: Python 3.8+, Virtualenv (`venv`), Git  
 
 ---
 
-## 🚀 Setup and Installation
+## 🚀 Setup & Installation
 
-Follow these steps to set up and run the project on your local machine.
+### Prerequisites
+- Python 3.8 or higher  
+- Git installed  
 
-**Prerequisites**:
--   Python 3.8 or higher
--   Git for version control
-
-**1. Clone the Repository**
+### 1. Clone the Repository
 ```bash
 git clone <your-repository-url>
 cd PROJECT_CEMENT_STRENGTH
+````
 
-**2. Create and Activate a Virtual Environment**
+### 2. Create & Activate Virtual Environment
+
+```bash
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\activate    # for Windows
+# OR
+source venv/bin/activate # for Mac/Linux
+```
 
-**3. Install Dependencies**
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-**4. Install the Source Package**
+### 4. Install Source Package
+
+```bash
 pip install -e .
+```
 
-🛠️ How to Run the Project
-The project is divided into two main phases: training the pipeline and launching the web application.
-Phase 1: Training the Pipeline
-This script will run the complete machine learning pipeline: ingest the data, perform transformations, train the RandomForestRegressor model, and save the necessary model and preprocessor files (.pkl) into the artifacts folder.
+---
+
+## 🛠️ How to Run the Project
+
+### **Phase 1: Train the Pipeline**
+
+This runs the full ML workflow — data ingestion, transformation, model training, and artifact saving.
+
+```bash
 python src/pipeline/train_pipeline.py
+```
 
-Phase 2: Launching the Web Application
+### **Phase 2: Launch the Web App**
+
+```bash
 python application.py
+```
 
-Once the server is running, open your web browser and navigate to:
-http://127.0.0.1:5000
+Now open your browser at:
+👉 **[http://127.0.0.1:5000](http://127.0.0.1:5000)**
+
+---
+
+## 🧪 How to Use the Application
+
+### **1. Real-Time Prediction**
+
+* Go to `http://127.0.0.1:5000`
+* Enter values for all 8 input fields under **“Real-Time Prediction”**
+* Click **“Predict Single Value”**
+* The predicted compressive strength will appear below the form.
+
+### **2. Batch Prediction (CSV Upload)**
+
+* Go to `http://127.0.0.1:5000`
+* Under **“Batch Prediction”**, upload a CSV containing 8 input columns (no strength column)
+* Click **“Predict on Dataset”**
+* A preview of the first 5 predicted rows appears
+* Click **“Download Full Predicted Dataset”** to get the complete CSV with predictions.
+
+---
+
+## 🧠 Model Details
+
+* **Algorithm**: `RandomForestRegressor` (Scikit-learn)
+* **Performance**: Achieves an **R² score ≈ 0.93** on test data, indicating high predictive accuracy.
+
+---
+
+## 📜 License
+
+This project is for educational and demonstration purposes.
+Feel free to adapt or extend it for your own MLOps learning and experimentation.
+
+---
+
+**Author:** Vishnu Kumar D S
+
+**GitHub:** [Link](https://github.com/Vishnukumards)
+
+```
+
+Would you like me to add badges (like Python version, Flask, License, etc.) and format it for GitHub with a clean header layout?
+```
 
 
-🧪 How to Use the Application
-Once the web application is running, you can use its two main features:
-For Real-Time Prediction (Single Input):
-Navigate to http://127.0.0.1:5000.
-Use the form on the left side of the page, titled "Real-Time Prediction".
-Fill in the values for all 8 input fields.
-Click the "Predict Single Value" button.
-The predicted compressive strength will appear below the form.
-For Batch Prediction (CSV Upload):
-Navigate to http://127.0.0.1:5000.
-Use the form on the right side of the page, titled "Batch Prediction".
-Prepare a CSV file that contains the 8 input columns but does not contain the final strength column.
-Click "Choose File", select your CSV, and click the "Predict on Dataset" button.
-The page will reload, showing a preview of the first 5 rows of your data with a new Strength_Prediction column.
-Click the "Download Full Predicted Dataset" button to download a new CSV file containing all your original data plus the predictions.
-
-🧠 Model Details
-
-Model: RandomForestRegressor from Scikit-learn.
-Performance: The model achieves an R-squared (R²) score of approximately 0.93 on the test set, indicating high predictive accuracy.
+Performance: The model achieves an R-squared (R²) score of approximately 0.93 on the test set, indicating high predictive accurac
